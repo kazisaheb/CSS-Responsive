@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+img {
+  width: 100%;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: aqua;
+  height: 50px;
+  line-height: 50px;
+}
+nav ul {
+  display: flex;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul li a {
+  text-decoration: none;
+  padding: 13px 20px;
+  background-color: chartreuse;
+  margin: 0 10px;
+}
+#click,
+#drop {
+  display: none;
+}
+
+#click:checked ~ ul {
+  display: none;
+}
+main {
+  width: 80%;
+  margin: 0 auto;
+}
+section {
+  margin: 50px 0;
+}
+.banner,
+.choice {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  grid-gap: 2em;
+}
+.price {
+  display: flex;
+  justify-content: space-between;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2em;
+}
+.product {
+  box-shadow: 0 0 10px 0 gray;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.option {
+  display: flex;
+  margin: 10px 0;
+  box-shadow: 0 0 5px 0 gray;
+  padding: 5px;
+  border-radius: 5px;
+}
+.option img {
+  width: 150px;
+}
+.option .texts {
+  margin: 0 10px;
+}
+/* ========================
+মিডিয়া কুয়েরি'স
+======================= */
+@media screen and (max-width: 688px) {
+  .banner,
+  .choice {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .products {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #drop {
+    display: block;
+  }
+  ul {
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    display: none;
+  }
+  #drop:checked ~ ul {
+    display: block;
+  }
+}
+@media screen and (min-width: 689px) and (max-width: 992px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .option {
+    display: block;
+  }
+}
